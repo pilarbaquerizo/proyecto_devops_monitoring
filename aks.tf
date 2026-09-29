@@ -1,10 +1,10 @@
 resource "azurerm_resource_group" "rg_01" {
-  name     = "rg-pbmonitoring-dev-eastus-01"
-  location = "East US"
+  name     = "rg-pbmonitoring-dev-centralus-01"
+  location = "Central US"
 }
 
 # resource "azurerm_log_analytics_workspace" "law_01" {
-#   name                = "law-pbmonitoring-dev-eastus-01"
+#   name                = "law-pbmonitoring-dev-centralus-01"
 #   location            = azurerm_resource_group.rg_01.location
 #   resource_group_name = azurerm_resource_group.rg_01.name
 #   sku                 = "PerGB2018"
@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rg_01" {
 # }
 
 resource "azurerm_kubernetes_cluster" "aks_01" {
-  name                = "aks-pbmonitoring-dev-eastus-01"
+  name                = "aks-pbmonitoring-dev-centralus-01"
   location            = azurerm_resource_group.rg_01.location
   resource_group_name = azurerm_resource_group.rg_01.name
   dns_prefix          = "aksdns"
